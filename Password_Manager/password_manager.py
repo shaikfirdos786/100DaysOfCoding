@@ -3,6 +3,8 @@ from tkinter import messagebox
 from random import randint, choice, shuffle
 import pyperclip
 
+YELLOW = "#f7f5dd"
+
 
 # --------------------------------Password Generator-----------------------------#
 def generate_password():
@@ -53,27 +55,27 @@ def save():
 
 window = Tk()
 window.title("Password Manager")
-window.config(pady=50, padx=50)
+window.config(pady=50, padx=50, bg=YELLOW)
 
-canvas = Canvas(width=200, height=200)
+canvas = Canvas(width=200, height=200, bg=YELLOW, highlightthickness=0)
 logo_img = PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=logo_img)
 canvas.grid(column=1, row=0)
 
 # Labels
 
-website_label = Label(text="Website:")
-email_username_label = Label(text="Email/Username:")
-password_label = Label(text="Password:")
+website_label = Label(text="Website:", highlightthickness=0, bg=YELLOW)
+email_username_label = Label(text="Email/Username:", highlightthickness=0, bg=YELLOW)
+password_label = Label(text="Password:", highlightthickness=0, bg=YELLOW)
 website_label.grid(column=0, row=1)
 email_username_label.grid(column=0, row=2)
 password_label.grid(column=0, row=3)
 
 # Entries
 
-website_entry = Entry(width=35)
-email_username_entry = Entry(width=35)
-password_entry = Entry(width=21)
+website_entry = Entry(width=35, highlightthickness=0)
+email_username_entry = Entry(width=35, highlightthickness=0)
+password_entry = Entry(width=21, highlightthickness=0)
 website_entry.grid(row=1, column=1)
 website_entry.focus()
 email_username_entry.grid(row=2, column=1)
@@ -82,8 +84,8 @@ password_entry.grid(column=1, row=3)
 
 # Buttons
 
-generate_pass_button = Button(text="Generate Password", command=generate_password)
-add_button = Button(text="Add", width=36, command=save)
+generate_pass_button = Button(text="Generate Password", command=generate_password, highlightthickness=0, bg="#D8E9A8")
+add_button = Button(text="Add", width=36, command=save, highlightthickness=0, bg="#ECB365")
 generate_pass_button.grid(column=2, row=3)
 add_button.grid(row=4, column=1)
 
